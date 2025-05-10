@@ -1,6 +1,7 @@
 return {
     name = "Just AFK Game",
     init = function(env)
+        local transp = 0.8
         env.Section:NewButton(
             "Открыть VIP",
             "Доступ в VIP зону",
@@ -8,20 +9,18 @@ return {
                 local door = env.Workspace.VipDoor
                 if door then
                     door.CanCollide = false
-                    door.Transparency = 0.8
+                    door.Transparency = transp
                 end
             end
         )
-
-        env.Section:NewSlider(
-            "Сила прыжка",
-            "Регулировка высоты прыжка",
-            200,
-            50,
-            function(value)
-                local char = env.GetChar()
-                if char.Humanoid then
-                    char.Humanoid.JumpHeight = value
+        env.Section:NewButton(
+            "Открыть 1000Min дверь",
+            "Доступ в дом",
+            function()
+                local door = env.Workspace:FindFirstChild("1000MinDoor")
+                if door then
+                    door.CanCollide = false
+                    door.Transparency = transp
                 end
             end
         )
