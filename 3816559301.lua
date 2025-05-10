@@ -1,8 +1,8 @@
 return function(env)
     -- Создаем секцию автоматически
-    local mainSection = env.Main_Tab:NewSection("Just AFK Game idk")
+    local Section = env.Main_Tab:NewSection("Just AFK Game idk")
     
-    mainSection:NewButton(
+    Section:NewButton(
         "Открыть VIP",
         "Доступ в VIP зону",
         function()
@@ -14,7 +14,7 @@ return function(env)
         end
     )
 
-    mainSection:NewButton(
+    Section:NewButton(
         "Открыть 1000Min",
         "Секретная дверь",
         function()
